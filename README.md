@@ -5,6 +5,11 @@
 
 ## What’s new feature 
   This is a new way to accurately identify the behavior of iOS malicious code. Based on the method of analyzing malicious code running in the memory based on the Mach-O format in the App, it can perform flexible behavior recognition for analysis and continuous tracking. This is a very accurate anti-plug-in defense method, including behaviors, variables, and highly obfuscated code (including ollvm), which has achieved very good results in our defense process.
+  
+## How to use
+1. Use XCode open .xcodeproj file or create new static library project . 
+2. Build Phases -> Compile Sources , add all *.c / *.mm file .
+3. command + B build .
 
 ## Logic Priciple 
   The tool provides an API interface for obtaining externally match rules. It will analyze the behavior of jailbroken and repackaged dynamic libraries at runtime, mainly through static analysis of the MachO file format, through the Load Command and different segments Obtain the import table, export table, class name, function name, string and other information, and judge whether the dynamic library has been loaded into the memory through the memory map at runtime.
