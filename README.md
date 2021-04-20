@@ -17,15 +17,23 @@ secinfo * Security_CoreFoundation(void);
 Invoke example : 
 
 `
+
 info = (secinfo *)malloc(sizeof(secinfo));
+
 info->scan_result = (unsigned char * ) malloc(1024*1024);
+
 memset(info->scan_result,0,1024*1024);
+
 if(info == NULL)
+
 {
-    goto RETURN;
+
+  goto RETURN;
+
 }
         
 info->is_plugScan = security_scanEngine((unsigned char *)info->scan_result);
+
 `
 
 ## Logic Priciple 
