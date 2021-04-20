@@ -16,6 +16,7 @@ secinfo * Security_CoreFoundation(void);
 
 Invoke example : 
 
+`
 info = (secinfo *)malloc(sizeof(secinfo));
 info->scan_result = (unsigned char * ) malloc(1024*1024);
 memset(info->scan_result,0,1024*1024);
@@ -25,6 +26,7 @@ if(info == NULL)
 }
         
 info->is_plugScan = security_scanEngine((unsigned char *)info->scan_result);
+`
 
 ## Logic Priciple 
   The tool provides an API interface for obtaining externally match rules. It will analyze the behavior of jailbroken and repackaged dynamic libraries at runtime, mainly through static analysis of the MachO file format, through the Load Command and different segments Obtain the import table, export table, class name, function name, string and other information, and judge whether the dynamic library has been loaded into the memory through the memory map at runtime.
